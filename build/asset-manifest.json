@@ -1,13 +1,10 @@
 {
   "files": {
-    "main.css": "/Store-React-Blue/static/css/main.58061e1a.css",
-    "main.js": "/Store-React-Blue/static/js/main.85d192cb.js",
-    "index.html": "/Store-React-Blue/index.html",
-    "main.58061e1a.css.map": "/Store-React-Blue/static/css/main.58061e1a.css.map",
-    "main.85d192cb.js.map": "/Store-React-Blue/static/js/main.85d192cb.js.map"
+    "main.js": "/store-react-blue/static/js/main.e1c47239.js",
+    "index.html": "/store-react-blue/index.html",
+    "main.e1c47239.js.map": "/store-react-blue/static/js/main.e1c47239.js.map"
   },
   "entrypoints": [
-    "static/css/main.58061e1a.css",
-    "static/js/main.85d192cb.js"
+    "static/js/main.e1c47239.js"
   ]
 }
