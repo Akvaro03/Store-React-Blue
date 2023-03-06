@@ -9,7 +9,8 @@ import Home from "../pages/home/home";
 export  const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Home />}>
+      <Route path="/store-react-blue" element={<Home />} />
     </Route>
-  ),{basename: "store-react-blue"}
+  ),{basename: "/store-react-blue"}
 );
 
