@@ -5,7 +5,7 @@ const Navbar = () => {
 
     
   return (
-    <div className={styles.navbar}>asdsa</div>
+    <div className={styles.navbar}>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
   );
 };
 

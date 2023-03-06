@@ -9,7 +9,7 @@ import Navbar from "../components/navbar/Navbar";
 
 export  const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Home />}>
+    <Route path="/" element={<Navbar />} >
       <Route path="/store-react-blue" element={<Home />} />
       <Route path="/store-react-blue/navbar" element={<Navbar />} />
     </Route>
