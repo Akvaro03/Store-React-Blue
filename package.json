@@ -43,6 +43,5 @@
   "devDependencies": {
     "gh-pages": "^5.0.0"
   },
-  "homepage": "https://akvaro03.github.io/Store-React-Blue/",
-  "proxy": "http://localhost:5000"
+  "homepage": "https://github.com/https://akvaro03.github.io/Store-React-Blue/"
 }
