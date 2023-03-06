@@ -1,18 +1,15 @@
 import {
-  HashRouter as Router,
+  createBrowserRouter,
+  createRoutesFromElements,
   Route,
-  } from 'react-router-dom';
+} from "react-router-dom";
 
 import Home from "../pages/home/home";
 
-export const Routes = ()=>{
-  return(
-    <Router>
-    <div>
-      <Route exact path="/" component={Home} />
-    </div>
-  </Router>
-
+export  const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Home />}>
+    </Route>
   )
-}
+);
 
