@@ -5,11 +5,13 @@ import {
 } from "react-router-dom";
 
 import Home from "../pages/home/home";
+import Navbar from "../components/navbar/Navbar";
 
 export  const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Home />}>
       <Route path="/store-react-blue" element={<Home />} />
+      <Route path="/navbar" element={<Navbar />} />
     </Route>
   ),{basename: "/store-react-blue"}
 );
