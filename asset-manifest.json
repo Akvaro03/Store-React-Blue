@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/Store-React-Blue/static/js/main.1f68b08a.js",
-    "index.html": "/Store-React-Blue/index.html",
-    "main.1f68b08a.js.map": "/Store-React-Blue/static/js/main.1f68b08a.js.map"
+    "main.js": "/store-react-blue/static/js/main.1f68b08a.js",
+    "index.html": "/store-react-blue/index.html",
+    "main.1f68b08a.js.map": "/store-react-blue/static/js/main.1f68b08a.js.map"
   },
   "entrypoints": [
     "static/js/main.1f68b08a.js"
