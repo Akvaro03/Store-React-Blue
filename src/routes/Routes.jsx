@@ -18,11 +18,9 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-    children: [
-      {
-        path: "team",
-        element: <Navbar />,
-      },
-    ],
   },
+  {
+    path: "/nose",
+    element: <Navbar />,
+  }
 ],{basename: "/store-react-blue"});
