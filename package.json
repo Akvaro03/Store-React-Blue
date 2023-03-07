@@ -1,7 +1,7 @@
 {
-  "name": "content",
+  "name": "store-react-blue",
   "version": "0.1.0",
-  "homepage": "https://akvaro03.github.io/store-react-blue/#",
+  "homepage": "https://akvaro03.github.io/store-react-blue/",
   "private": false,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
