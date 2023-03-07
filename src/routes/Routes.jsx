@@ -23,4 +23,4 @@ export const router = createBrowserRouter([
     path: "/nose",
     element: <Navbar />,
   }
-],{basename: "/store-react-blue"});
+]);
