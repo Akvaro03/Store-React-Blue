@@ -1,19 +1,17 @@
 import {
-  createHashRouter,
+  createBrowserRouter,
 } from "react-router-dom";
 
 import Home from "../pages/home/home";
 import Navbar from "../components/navbar/Navbar";
 
-export const router = createHashRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-    children: [
-      {
-        path: "team",
-        element: <Navbar />,
-      },
-    ],
   },
+  {
+    path: "/nose",
+    element: <Navbar />,
+  }
 ],{basename: "/store-react-blue"});
