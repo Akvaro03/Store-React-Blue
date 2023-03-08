@@ -5,25 +5,8 @@ const Home = () => {
     return (
         <div className="content">
             {/* <Navbar /> */}
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
+            <a href={`/nose`}>Your Name</a>
+
             <p>asdasdasdasddasasd</p>
             <p>asdasdasdasddasasd</p>
             <p>asdasdasdasddasasd</p>
