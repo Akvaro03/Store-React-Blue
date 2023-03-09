@@ -3,11 +3,11 @@
     height: 5vh;
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 5;
 }
 
 .textAdd{
     margin-left: 4%;
     font-size: .7em;
 }
-
-

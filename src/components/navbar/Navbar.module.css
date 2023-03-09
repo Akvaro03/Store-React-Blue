@@ -10,6 +10,8 @@
     grid-template-columns: repeat( 2, 1fr);
     align-items: center;
     background-color: rgb(250, 212, 219);
+    z-index: 5;
+    position: relative;
 
 }
 .navbar > div {
