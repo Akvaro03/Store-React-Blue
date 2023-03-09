@@ -1,0 +1,13 @@
+.ContentHome{
+    background-color: rgb(176, 209, 171);
+    height: 65vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-items: center;
+}
+
+.ImgExample{
+    width: 85%;
+    -webkit-filter: drop-shadow(10px 10px 9px #222);
+    filter: drop-shadow(10px 10px 9px #222);  
+}

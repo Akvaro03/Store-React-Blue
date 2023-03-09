@@ -1,0 +1,13 @@
+.MiniNavbar{
+    background-color: rgb(255, 161, 176);
+    height: 5vh;
+    display: flex;
+    align-items: center;
+}
+
+.textAdd{
+    margin-left: 4%;
+    font-size: .7em;
+}
+
+

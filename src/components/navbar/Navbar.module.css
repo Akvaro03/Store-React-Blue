@@ -1,3 +1,45 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(../../Fonts/tittleFonts.ttf);
+}
+
+
 .navbar{
-    background-color: blue;
+    height: 10vh;
+    display: grid;
+    grid-template-columns: repeat( 2, 1fr);
+    align-items: center;
+    background-color: rgb(250, 212, 219);
+
+}
+.navbar > div {
+    vertical-align: center;
+}
+.LogoStoreAndSearch{
+    margin-left: 7%;
+    letter-spacing: 5px;
+    font-size: 3em;
+}
+.Logo{
+    font-family: myFirstFont, sans-serif;
+}
+.LinksAndCart{
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5%;
+    gap: 3%;
+}
+.DivRight{
+    display: flex;
+    gap: 3%;
+    justify-content: space-evenly;
+    width: 70%;
+}
+.Account{
+    margin-left: 2%;
+}
+.Links, .Cart, .Account, .Categories {
+    display: grid;
+    align-items: center;
 }

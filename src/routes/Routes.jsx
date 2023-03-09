@@ -3,7 +3,7 @@ import {
 } from "react-router-dom";
 
 import Home from "../pages/home/home";
-import Navbar from "../components/navbar/Navbar";
+import Products from "../pages/productsUi";
 
 export const router = createBrowserRouter([
   {
@@ -11,7 +11,7 @@ export const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/Header",
-    element: <Navbar />,
+    path: "/Products",
+    element: <Products />,
   }
 ]);
