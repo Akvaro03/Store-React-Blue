@@ -1,109 +1,14 @@
 // import Navbar from "../../components/navbar/Navbar";
 
+import {Link} from "react-router-dom";
+
 const Home = () => {
     
     return (
         <div className="content">
-            {/* <Navbar /> */}
-            <a href={`/nose`}>Your Name</a>
-
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-            <p>asdasdasdasddasasd</p>
-
+          <Link className='App-link' style={{ margin: "0 10px"}} to="/Header">
+            Header
+          </Link>
         </div>
     );
 };

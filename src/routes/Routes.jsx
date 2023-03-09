@@ -11,7 +11,7 @@ export const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/nose",
+    path: "/Header",
     element: <Navbar />,
   }
 ]);
