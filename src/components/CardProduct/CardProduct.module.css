@@ -1,0 +1,34 @@
+.ContentImg{
+    background-color: #E0B5FA;
+    margin: 5%;
+    box-shadow: rgb(17 12 46 / 15%) 0px 48px 100px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.ImgCard{
+    width: 100%;
+    height: auto;
+
+    filter: drop-shadow(10px 10px 9px #31313173);
+}
+.DescriptionProduct{
+    display: grid;
+    gap: 0.7em;
+    text-align: center;
+}
+
+.DescriptionTittle{
+    color: rgb(27, 27, 27);
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.DescriptionTittle:hover{
+    color: rgb(94, 93, 93);
+}
+
+.DescriptionPrice{
+    font-weight: 600;
+    color: #f39c12;
+}

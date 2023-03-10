@@ -1,9 +1,12 @@
-function Products() {
+import ProductsAndFilters from '../../components/Products';
+import styles from './ProductsUi.module.css'
+
+function ProductsUi() {
     return (
-        <div>
-            Productos
+        <div className={styles.ContentProductsUi}>
+            <ProductsAndFilters />
         </div>
     );
 }
 
-export default Products;
+export default ProductsUi;

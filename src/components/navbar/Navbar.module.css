@@ -11,8 +11,9 @@
     align-items: center;
     background-color: rgb(250, 212, 219);
     z-index: 5;
-    position: relative;
-
+    z-index: 50;
+    position: sticky;
+    top: 0;
 }
 .navbar > div {
     vertical-align: center;
@@ -22,21 +23,26 @@
     letter-spacing: 5px;
     font-size: 3em;
 }
+.Search{
+    min-width: 100px;
+    width: 10rem;
+    position: relative;
+}
+
+
 .Logo{
     font-family: myFirstFont, sans-serif;
 }
 .LinksAndCart{
-    font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: flex-end;
     margin-right: 5%;
-    gap: 3%;
 }
 .DivRight{
     display: flex;
     gap: 3%;
     justify-content: space-evenly;
-    width: 70%;
+    width: 100%;
 }
 .Account{
     margin-left: 2%;
