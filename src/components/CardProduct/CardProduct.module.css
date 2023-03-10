@@ -19,16 +19,16 @@
 }
 
 .DescriptionTittle{
-    color: rgb(27, 27, 27);
+    color: rgb(27, 27, 27) !important;
     font-size: 25px;
     font-weight: 300;
 }
 
 .DescriptionTittle:hover{
-    color: rgb(94, 93, 93);
+    color: rgb(94, 93, 93) !important;
 }
 
 .DescriptionPrice{
     font-weight: 600;
-    color: #f39c12;
+    color: #f39c12 !important;
 }

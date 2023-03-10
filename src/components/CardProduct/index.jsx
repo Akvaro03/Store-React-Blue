@@ -2,19 +2,20 @@ import { Link } from '@mui/material';
 import Styles from './CardProduct.module.css'
 
 function CardProduct({props: {name, imgProduct, Price}}) {
-    console.log(Price)
     const formatPrice = "$" + Intl.NumberFormat('en-DE').format(Price);
-    
+    const url = name
+                .split(" ")
+                .reduce((prev, now) => prev + now);
     return ( 
-        <div className={Styles.CardProduct}>
+        <Link href={"Products/" + url} underline="none" className={Styles.CardProduct}>
             <div className={Styles.ContentImg}>
-                <img className={Styles.ImgCard} src={imgProduct} alt="" />
+                <img className={Styles.ImgCard} src={imgProduct} alt={name} />
             </div>
             <div className={Styles.DescriptionProduct}>
-                <Link className={Styles.DescriptionTittle} href="#" underline="none">{name}</Link>
-                <Link className={Styles.DescriptionPrice} underline="hover" href="#">{formatPrice}</Link>
+                <p className={Styles.DescriptionTittle} underline="none" href="#" >{name}</p>
+                <p className={Styles.DescriptionPrice} underline="hover" href="#">{formatPrice}</p>
             </div>
-        </div>
+        </Link>
      );
 }
 

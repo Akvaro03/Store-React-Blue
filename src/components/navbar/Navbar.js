@@ -24,7 +24,7 @@ const Navbar = () => {
     <div className={styles.navbar}>
       <Router>
         <div className={styles.LogoStoreAndSearch}>
-          <p className={styles.Logo}>Name Store</p>
+          <p className={styles.Logo}>Blue Store</p>
         </div>
         <div className={styles.LinksAndCart}>
           <div className={styles.DivRight}>
