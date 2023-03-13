@@ -42,11 +42,6 @@ const Navbar = () => {
               renderInput={(params) => <TextField fullWidth {...params} label="Buscador" />}
             />
           </div>
-          <div className={styles.Links}>
-              <Link to="/products">
-                Products
-              </Link>
-          </div>
           <div className={styles.Categories}>
             <p>Categories</p>
           </div>
