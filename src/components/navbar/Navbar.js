@@ -25,6 +25,7 @@ const Navbar = () => {
   const cart = useSelector(store => store.cart)
 
   const navigateToHome = () => {
+    console.log("me voy")
     navigate("/")
   }
   return (
