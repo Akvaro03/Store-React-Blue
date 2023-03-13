@@ -23,11 +23,12 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 const Navbar = () => {
   const navigate = useNavigate();
   const cart = useSelector(store => store.cart)
+  console.log(cart.lentgh)
 
   return (
     <div className={styles.navbar}>
       <div className={styles.LogoStoreAndSearch}>
-        <Link className={styles.Logo} to="/">Blue Store</Link>
+        <p className={styles.Logo} onClick={() => navigate("/")}>Blue Store</p>
       </div>
       <div className={styles.LinksAndCart}>
         <div className={styles.DivRight}>
