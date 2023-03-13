@@ -1,43 +1,10 @@
 import { Button } from '@mui/material';
 import Style from './Products.module.css'
-import imgProduct from '../../img/productExample.png'
 import CardProduct from '../CardProduct';
-
-const Products = [
-    {
-        imgProduct: imgProduct,
-        name: "Mochila Kuromi",
-        Price: 18000
-    },
-    {
-        imgProduct: imgProduct,
-        name: "Mochila Kuromi",
-        Price: 18000
-    }, {
-        imgProduct: imgProduct,
-        name: "Mochila Kuromi",
-        Price: 18000
-    }, {
-        imgProduct: imgProduct,
-        name: "Mochila Kuromi",
-        Price: 18000
-    }, {
-        imgProduct: imgProduct,
-        name: "Mochila Kuromi",
-        Price: 18000
-    },
-    {
-        imgProduct: imgProduct,
-        name: "Mochila Kuromi",
-        Price: 18000
-    }, {
-        imgProduct: imgProduct,
-        name: "Mochila Kuromi",
-        Price: 18000
-    },
-]
+import { useSelector} from 'react-redux';
 
 function ProductsAndFilters() {
+    const products = useSelector((state) => state.products)
     return (
         <>
             <div className={Style.HeaderAndFilters}>
@@ -50,7 +17,7 @@ function ProductsAndFilters() {
                 </div>
             </div>
             <div className={Style.ContentProducts}>
-                {Products.map((product, key) => <CardProduct key={key} props={product} />)}
+                {products.keys() ? products.map((product, key) => <CardProduct key={key} props={product} />) : <p></p>}
             </div>
         </>
     );

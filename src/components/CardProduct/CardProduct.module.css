@@ -1,11 +1,20 @@
+.CardProduct{
+    position: relative;
+    /* overflow: hidden; */
+}
 .ContentImg{
     background-color: #E0B5FA;
     margin: 5%;
     box-shadow: rgb(17 12 46 / 15%) 0px 48px 100px 0px;
     display: flex;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
-
+.ContentImg:hover .ContentIcon{
+    transform: translateY(0%);
+    transition: all 0.3s ease-out;
+}
 .ImgCard{
     width: 100%;
     height: auto;
@@ -17,18 +26,30 @@
     gap: 0.7em;
     text-align: center;
 }
-
 .DescriptionTittle{
     color: rgb(27, 27, 27) !important;
     font-size: 25px;
     font-weight: 300;
 }
-
 .DescriptionTittle:hover{
     color: rgb(94, 93, 93) !important;
 }
-
 .DescriptionPrice{
     font-weight: 600;
     color: #f39c12 !important;
+}
+.ContentIcon{
+    position: absolute;
+    bottom: 7%;
+    left: 46%;
+    transform: translateY(180%);
+    background-color: #000000;
+    padding: 1%;
+    border-radius: 50%;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+.IconCart{
+    color: #f39c12 !important;
+
 }

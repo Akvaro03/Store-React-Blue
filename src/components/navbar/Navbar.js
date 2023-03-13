@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 import styles from "./Navbar.module.css";
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
@@ -6,6 +7,8 @@ import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Autocomplete, TextField } from "@mui/material";
+import { useSelector } from "react-redux";
+
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -18,47 +21,49 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const cart = useSelector(store => store.cart)
 
-
+  const navigateToHome = () => {
+    navigate("/")
+  }
   return (
     <div className={styles.navbar}>
-      <Router>
-        <div className={styles.LogoStoreAndSearch}>
-          <p className={styles.Logo}>Blue Store</p>
-        </div>
-        <div className={styles.LinksAndCart}>
-          <div className={styles.DivRight}>
-            <div className={styles.Search}>
-              <Autocomplete
-                id="free-solo-demo"
-                freeSolo
-                fullWidth
-                size="small"
-                options={top100Films.map((option) => option.title)}
-                renderInput={(params) => <TextField fullWidth {...params} label="Buscador" />}
-              />
-            </div>
-            <div className={styles.Links}>
-              <Link style={{ margin: "0 10px" }} to="/Products">
-                Products
+      <div className={styles.LogoStoreAndSearch}>
+        <p className={styles.Logo} onClick={navigateToHome}>Blue Store</p>
+      </div>
+      <div className={styles.LinksAndCart}>
+        <div className={styles.DivRight}>
+          <div className={styles.Search}>
+            <Autocomplete
+              id="free-solo-demo"
+              freeSolo
+              fullWidth
+              size="small"
+              options={top100Films.map((option) => option.title)}
+              renderInput={(params) => <TextField fullWidth {...params} label="Buscador" />}
+            />
+          </div>
+          <div className={styles.Links}>
+              <Link to="/products">
+                Cancel
               </Link>
-            </div>
-            <div className={styles.Categories}>
-              <p>Categories</p>
-            </div>
-            <div className={styles.Cart}>
-              <IconButton aria-label="cart">
-                <StyledBadge badgeContent={4} color="secondary">
-                  <ShoppingCartIcon />
-                </StyledBadge>
-              </IconButton>
-            </div>
-            <div className={styles.Account}>
-              <AccountCircleIcon color="secondary" fontSize="large" />
-            </div>
+          </div>
+          <div className={styles.Categories}>
+            <p>Categories</p>
+          </div>
+          <div className={styles.Cart}>
+            <IconButton aria-label="cart">
+              <StyledBadge badgeContent={cart.lentgh} color="secondary">
+                <ShoppingCartIcon />
+              </StyledBadge>
+            </IconButton>
+          </div>
+          <div className={styles.Account}>
+            <AccountCircleIcon color="secondary" fontSize="large" />
           </div>
         </div>
-      </Router>
+      </div>
     </div>
   );
 };

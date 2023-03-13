@@ -5,13 +5,15 @@ import {
 import Home from "../pages/home/home";
 import ProductsUi from "../pages/productsUi";
 
+
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
   },
   {
-    path: "/Products",
+    path: "/products",
     element: <ProductsUi />,
+
   }
 ]);
