@@ -24,14 +24,10 @@ const Navbar = () => {
   const navigate = useNavigate();
   const cart = useSelector(store => store.cart)
 
-  const navigateToHome = () => {
-    console.log("me voy")
-    navigate("/")
-  }
   return (
     <div className={styles.navbar}>
       <div className={styles.LogoStoreAndSearch}>
-        <p className={styles.Logo} onClick={navigateToHome}>Blue Store</p>
+        <p className={styles.Logo} onClick={() => navigate("/")}>Blue Store</p>
       </div>
       <div className={styles.LinksAndCart}>
         <div className={styles.DivRight}>
