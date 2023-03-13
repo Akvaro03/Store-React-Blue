@@ -27,7 +27,7 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <div className={styles.LogoStoreAndSearch}>
-        <p className={styles.Logo} onClick={() => navigate("/")}>Blue Store</p>
+        <Link className={styles.Logo} to="/">Blue Store</Link>
       </div>
       <div className={styles.LinksAndCart}>
         <div className={styles.DivRight}>
@@ -43,7 +43,7 @@ const Navbar = () => {
           </div>
           <div className={styles.Links}>
               <Link to="/products">
-                Cancel
+                Products
               </Link>
           </div>
           <div className={styles.Categories}>
