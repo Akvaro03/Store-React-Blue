@@ -1,29 +1,23 @@
 import Styles from './CardProduct.module.css'
-import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
-import { addProduct } from '../../features/cart/cartSlice';
-import { useDispatch } from 'react-redux';
+import AddCart from '../addCart';
+import { useNavigate } from 'react-router-dom';
 
 function CardProduct({ props: { name, imgProduct, Price, Description } }) {
-
-    const Dispatch = useDispatch();
-
+    const navigate = useNavigate();
     const formatPrice = "$" + Intl.NumberFormat('en-DE').format(Price);
     const url = name
         .split(" ")
         .reduce((prev, now) => prev + now);
 
-    const handleClickCart = () => {
-        Dispatch(addProduct({ name, imgProduct, Price, Description }));
-    }
     const handleClickToProduct = () => {
-        window.location.replace("https://www.w3schools.com")
+        navigate(`/products/${url}`)
     }
     return (
         <div className={Styles.CardProduct}>
             <div className={Styles.ContentImg}>
                 <img className={Styles.ImgCard} src={imgProduct} alt={name} onClick={handleClickToProduct} />
-                <div className={Styles.ContentIcon} onClick={handleClickCart}>
-                    <ShoppingBagOutlinedIcon className={Styles.IconCart} />
+                <div className={Styles.ContentIcon}>
+                    <AddCart  props={{ name, imgProduct, Price, Description }}/>
                 </div>
             </div>
             <div className={Styles.DescriptionProduct}>

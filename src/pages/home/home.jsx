@@ -1,11 +1,10 @@
-// import Navbar from "../../components/navbar/Navbar";
-
+import { lazy } from "react";
 import styles from "./home.module.css";
 import productPng from '../../img/productExample.png';
 import { Button, createTheme, ThemeProvider } from "@mui/material";
 import { Link } from "react-router-dom";
-import Navbar from "../../components/navbar/Navbar";
-import MiniNavbar from "../../components/miniNavbar";
+const Navbar = lazy(() => import("../../components/navbar/Navbar"));
+const MiniNavbar = lazy(() => import("../../components/miniNavbar"));
 const theme = createTheme({
   status: {
     danger: '#e53e3e',

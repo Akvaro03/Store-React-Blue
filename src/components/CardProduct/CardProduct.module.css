@@ -15,6 +15,17 @@
     transform: translateY(0%);
     transition: all 0.3s ease-out;
 }
+.ContentIcon{
+    position: absolute;
+    bottom: 7%;
+    left: 46%;
+    transform: translateY(180%);
+    background-color: #000000;
+    padding: 1%;
+    border-radius: 50%;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
 .ImgCard{
     width: 100%;
     height: auto;
@@ -37,17 +48,6 @@
 .DescriptionPrice{
     font-weight: 600;
     color: #f39c12 !important;
-}
-.ContentIcon{
-    position: absolute;
-    bottom: 7%;
-    left: 46%;
-    transform: translateY(180%);
-    background-color: #000000;
-    padding: 1%;
-    border-radius: 50%;
-    transition: all 0.3s ease-out;
-    cursor: pointer;
 }
 .IconCart{
     color: #f39c12 !important;
