@@ -42,3 +42,11 @@ ins {
 del {
   text-decoration: line-through;
 }
+
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
