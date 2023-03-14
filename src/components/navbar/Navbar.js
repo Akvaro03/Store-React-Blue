@@ -22,6 +22,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 const Navbar = () => {
   const navigate = useNavigate();
+  console.log("first")
   const cart = useSelector(store => store.cart)
   return (
     <div className={styles.navbar}>
