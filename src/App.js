@@ -13,14 +13,6 @@ Parse.serverUrl(host_url);
 
 function App() {
 
-  const fetchAllPlayers = async () => {
-    const query = new Parse.query("Product");
-    const allProducts = await query.Find();
-    allProducts.forEach(product => {
-      console.log(product)
-    })
-  }
-  fetchAllPlayers();
   return (
     <div className="App">
     <Navbar />

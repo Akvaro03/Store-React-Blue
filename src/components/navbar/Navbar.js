@@ -23,8 +23,6 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 const Navbar = () => {
   const navigate = useNavigate();
   const cart = useSelector(store => store.cart)
-  console.log(cart.lentgh)
-
   return (
     <div className={styles.navbar}>
       <div className={styles.LogoStoreAndSearch}>
@@ -47,7 +45,7 @@ const Navbar = () => {
           </div>
           <div className={styles.Cart}>
             <IconButton aria-label="cart">
-              <StyledBadge badgeContent={cart.lentgh} color="secondary">
+              <StyledBadge badgeContent={1} color="secondary">
                 <ShoppingCartIcon />
               </StyledBadge>
             </IconButton>
