@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import styles from "./Navbar.module.css";
 import Badge from '@mui/material/Badge';
@@ -22,7 +22,6 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 const Navbar = () => {
   const navigate = useNavigate();
-  console.log("first")
   const cart = useSelector(store => store.cart)
   return (
     <div className={styles.navbar}>
@@ -46,7 +45,7 @@ const Navbar = () => {
           </div>
           <div className={styles.Cart}>
             <IconButton aria-label="cart">
-              <StyledBadge badgeContent={1} color="secondary">
+              <StyledBadge badgeContent={cart.length} color="secondary">
                 <ShoppingCartIcon />
               </StyledBadge>
             </IconButton>
