@@ -1,4 +1,5 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import styles from "./Navbar.module.css";
 import Badge from '@mui/material/Badge';
@@ -8,6 +9,10 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Autocomplete, TextField } from "@mui/material";
 import { useSelector } from "react-redux";
+// import GetProductDb from "../../hooks/GetProductDb";
+import { useEffect } from "react";
+import getProductsDb from "../../hooks/getProductsDb";
+import LoadProductsDbToStore from "../../hooks/LoadProductsDbToStore";
 
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -21,46 +26,51 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 
 const Navbar = () => {
-  const navigate = useNavigate();
   const cart = useSelector(store => store.cart)
-  console.log(cart)
+  const products = useSelector(store => store.products)
+
+
+  LoadProductsDbToStore()
+  
   return (
     <div className={styles.navbar}>
-      <div className={styles.LogoStoreAndSearch}>
-        <p className={styles.Logo} onClick={() => navigate("/")}>Blue Store</p>
-      </div>
-      <div className={styles.LinksAndCart}>
-        <div className={styles.DivRight}>
-          <div className={styles.Search}>
-            <Autocomplete
-              id="free-solo-demo"
-              freeSolo
-              fullWidth
-              size="small"
-              options={cart.map((option) => option.name)}
-              renderInput={(params, key) => <TextField key={key} fullWidth {...params} label="Buscador" />}
-            />
-          </div>
-          <div className={styles.Links}>
+      <Router>
+        <div className={styles.LogoStoreAndSearch}>
+          <Link to="/" className={styles.Logo}>Blue Store</Link>
+        </div>
+        <div className={styles.LinksAndCart}>
+          <div className={styles.DivRight}>
+            <div className={styles.Search}>
+              <Autocomplete
+                id="free-solo-demo"
+                freeSolo
+                fullWidth
+                size="small"
+                options={cart.map((option) => option.name)}
+                renderInput={(params, key) => <TextField key={key} fullWidth {...params} label="Buscador" />}
+              />
+            </div>
+            <div className={styles.Links}>
               <Link to="/products">
                 Products
               </Link>
-          </div>
-          <div className={styles.Categories}>
-            <p>Categories</p>
-          </div>
-          <div className={styles.Cart}>
-            <IconButton aria-label="cart">
-              <StyledBadge badgeContent={cart.length} color="secondary">
-                <ShoppingCartIcon />
-              </StyledBadge>
-            </IconButton>
-          </div>
-          <div className={styles.Account}>
-            <AccountCircleIcon color="secondary" fontSize="large" />
+            </div>
+            <div className={styles.Categories}>
+              <p>Categories</p>
+            </div>
+            <div className={styles.Cart}>
+              <IconButton aria-label="cart">
+                <StyledBadge badgeContent={cart.length} color="secondary">
+                  <ShoppingCartIcon />
+                </StyledBadge>
+              </IconButton>
+            </div>
+            <div className={styles.Account}>
+              <AccountCircleIcon color="secondary" fontSize="large" />
+            </div>
           </div>
         </div>
-      </div>
+      </Router>
     </div>
   );
 };

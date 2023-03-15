@@ -1,10 +1,7 @@
-import { lazy } from "react";
 import styles from "./home.module.css";
 import productPng from '../../img/productExample.png';
 import { Button, createTheme, ThemeProvider } from "@mui/material";
 import { Link } from "react-router-dom";
-const Navbar = lazy(() => import("../../components/navbar/Navbar"));
-const MiniNavbar = lazy(() => import("../../components/miniNavbar"));
 const theme = createTheme({
   status: {
     danger: '#e53e3e',
@@ -20,7 +17,7 @@ const theme = createTheme({
     },
   },
 });
-
+ 
 
 const Products = [
   {
@@ -87,8 +84,6 @@ const Home = () => {
 
   return (
     <>
-      <Navbar />
-      <MiniNavbar />
       <div className={styles.ContentHome}>
         <div className={styles.ProductExample}>
           <div className={styles.ContentImgExample}>
@@ -106,9 +101,9 @@ const Home = () => {
             <div className={styles.DivButton}>
               <ThemeProvider theme={theme}>
                 <Button className={styles.ButtonToProducts} variant="contained" color="neutral">
-                <Link to="/Products">
-                  Products
-                </Link>
+                  <Link to="/Products">
+                    Products
+                  </Link>
                 </Button>
               </ThemeProvider>
             </div>
@@ -117,8 +112,8 @@ const Home = () => {
 
         <div className={styles.ListProducts}>
           {Products.map((product, index) =>
-              <div key={index} className={styles.ProductCard}><img src={product.url} alt="" /></div>
-            )}
+            <div key={index} className={styles.ProductCard}><img src={product.url} alt="" /></div>
+          )}
           {/* <div>
             <img src={producPng} alt="" srcset="" />
           </div>

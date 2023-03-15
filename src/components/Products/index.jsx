@@ -1,10 +1,11 @@
 import { Button } from '@mui/material';
 import Style from './Products.module.css'
 import CardProduct from '../CardProduct';
-import { useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 
 function ProductsAndFilters() {
-    const products = useSelector((state) => state.products)
+    const products2 = useSelector((state) => state.products)
+    // console.log(products2[0])
     return (
         <>
             <div className={Style.HeaderAndFilters}>
@@ -17,7 +18,7 @@ function ProductsAndFilters() {
                 </div>
             </div>
             <div className={Style.ContentProducts}>
-                {products.keys() ? products.map((product, key) => <CardProduct key={key} props={product} />) : <p></p>}
+                {products2.map((product, key) => <CardProduct key={key} props={product} />)}
             </div>
         </>
     );

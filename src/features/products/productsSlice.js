@@ -2,63 +2,66 @@ import { createSlice } from "@reduxjs/toolkit";
 import imgBackpack from '../../img/productExample.png'
 import imgDoll from '../../img/productDoll.png'
 
-const initialState = [
-    {
-        imgProduct: imgBackpack,
-        name: "Mochila Kuromi",
-        Description: "This is a Kuromi backspack",
-        Price: 250,
-    },
-    {
-        imgProduct: imgDoll,
-        name: "Muñeco Kuromi",
-        Price: 150,
-        Description: "This is a doll"
-    },
-    {
-        imgProduct: imgBackpack,
-        name: "Mochila Kuromi",
-        Description: "This is a Kuromi backspack",
-        Price: 250,
-    },
-    {
-        imgProduct: imgDoll,
-        name: "Muñeco Kuromi",
-        Price: 150,
-        Description: "This is a doll"
-    },
-    {
-        imgProduct: imgBackpack,
-        name: "Mochila Kuromi",
-        Description: "This is a Kuromi backspack",
-        Price: 250,
-    },
-    {
-        imgProduct: imgDoll,
-        name: "Muñeco Kuromi",
-        Price: 150,
-        Description: "This is a doll"
-    },
-    {
-        imgProduct: imgBackpack,
-        name: "Mochila Kuromi",
-        Description: "This is a Kuromi backspack",
-        Price: 250,
-    },
-    {
-        imgProduct: imgDoll,
-        name: "Muñeco Kuromi",
-        Price: 150,
-        Description: "This is a doll"
-    },
+// const initialState = [
+//     {
+//         imgProduct: imgBackpack,
+//         name: "Mochila Kuromi",
+//         Description: "This is a Kuromi backspack",
+//         Price: 250,
+//     },
+//     {
+//         imgProduct: imgDoll,
+//         name: "Muñeco Kuromi",
+//         Price: 150,
+//         Description: "This is a doll"
+//     },
+//     {
+//         imgProduct: imgBackpack,
+//         name: "Mochila Kuromi",
+//         Description: "This is a Kuromi backspack",
+//         Price: 250,
+//     },
+//     {
+//         imgProduct: imgDoll,
+//         name: "Muñeco Kuromi",
+//         Price: 150,
+//         Description: "This is a doll"
+//     },
+//     {
+//         imgProduct: imgBackpack,
+//         name: "Mochila Kuromi",
+//         Description: "This is a Kuromi backspack",
+//         Price: 250,
+//     },
+//     {
+//         imgProduct: imgDoll,
+//         name: "Muñeco Kuromi",
+//         Price: 150,
+//         Description: "This is a doll"
+//     },
+//     {
+//         imgProduct: imgBackpack,
+//         name: "Mochila Kuromi",
+//         Description: "This is a Kuromi backspack",
+//         Price: 250,
+//     },
+//     {
+//         imgProduct: imgDoll,
+//         name: "Muñeco Kuromi",
+//         Price: 150,
+//         Description: "This is a doll"
+//     },
 
-]
-
+// ]
+const initialState = []
 const productsSlice = createSlice({
     name: "products",
     initialState,
     reducers:{
-        addProduct: (state, action) => {
+        addProduct: (state, {payload}) => {
+            let newState = [...state];
+            newState.push(payload);
+            return newState;
         },
         editProduct: (state, action) => {
 
