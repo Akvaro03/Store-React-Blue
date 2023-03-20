@@ -1,11 +1,30 @@
 import { Button } from '@mui/material';
 import Style from './Products.module.css'
 import CardProduct from '../CardProduct';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import fetchData from '../../hooks/fetchData';
+import { useEffect } from 'react';
+import { addProduct } from '../../features/products/productsSlice';
 
 function ProductsAndFilters() {
+    const Dispatch = useDispatch();
     const products2 = useSelector((state) => state.products)
-    // console.log(products2[0])
+    useEffect(() => {
+        const saveData = () => {
+            const dataFromFirebase = new Promise((resolve, reject) => {
+                resolve(fetchData())
+            })
+            dataFromFirebase.then(resolve => resolve.forEach(element => {
+                console.log("Entro a la funcion");
+                Dispatch(addProduct(element))
+            }))
+        }
+        if (products2.length === 0) {
+            saveData()
+        }
+    }, [products2,Dispatch])
+
+
     return (
         <>
             <div className={Style.HeaderAndFilters}>

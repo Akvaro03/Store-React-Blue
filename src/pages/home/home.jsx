@@ -2,6 +2,8 @@ import styles from "./home.module.css";
 import productPng from '../../img/productExample.png';
 import { Button, createTheme, ThemeProvider } from "@mui/material";
 import { Link } from "react-router-dom";
+import Navbar from "../../components/navbar/Navbar";
+import MiniNavbar from "../../components/miniNavbar";
 const theme = createTheme({
   status: {
     danger: '#e53e3e',
@@ -17,7 +19,7 @@ const theme = createTheme({
     },
   },
 });
- 
+
 
 const Products = [
   {
@@ -84,6 +86,8 @@ const Home = () => {
 
   return (
     <>
+      <Navbar />
+      <MiniNavbar />
       <div className={styles.ContentHome}>
         <div className={styles.ProductExample}>
           <div className={styles.ContentImgExample}>
