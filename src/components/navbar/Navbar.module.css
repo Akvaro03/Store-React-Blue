@@ -2,8 +2,6 @@
     font-family: myFirstFont;
     src: url(../../Fonts/tittleFonts.ttf);
 }
-
-
 .navbar{
     height: 10vh;
     display: grid;
@@ -28,8 +26,6 @@
     width: 10rem;
     position: relative;
 }
-
-
 .Logo{
     font-family: myFirstFont, sans-serif;
     color: black;
@@ -51,4 +47,60 @@
 .Links, .Cart, .Account, .Categories {
     display: grid;
     align-items: center;
+}
+.CardCart{
+    background-color: rgb(250, 212, 219);
+    width: 35%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    animation-name: moveModel;
+    animation-duration: .8s;
+    transition-timing-function: ease-out;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.ContentCardCart{
+    width: 100%;
+    margin: 7% 4%;
+}
+.TittleCartAndCross{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.TittleCart{
+    font-size: 25px;
+    color: black;
+    font-weight: 700;
+    align-items: center;
+}
+.Cross{
+    margin-right: 8%;
+}
+.ProducsCart{
+    border: 2px black solid;
+    height: 70%;
+}
+.Prices{
+    display: flex;
+    color: black;
+    font-weight: 700;
+    justify-content: space-between;
+    font-size: 22px;
+    color: #fc9700;
+    margin-top: 5%;
+}
+.ConfirmCart{
+    margin-top: 10%;
+}
+@keyframes moveModel {
+    from {
+        transform: translateX(50%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
 }

@@ -1,0 +1,19 @@
+.ContentProductCart{
+    display: flex;
+}
+.ImageProduct{
+    background-color: #E0B5FA;
+    margin: 5%;
+    box-shadow: rgb(17 12 46 / 15%) 0px 48px 100px 0px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    width: 30%;
+}
+
+.ImageProduct img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(10px 10px 9px #31313173);
+}

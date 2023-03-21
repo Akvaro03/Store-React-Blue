@@ -5,10 +5,10 @@ import Styles from './addCart.module.css'
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 
 
-function AddCart({props : { name, imgProduct, Price, Description }}) {
+function AddCart({props : { name, url, price, description }}) {
     const Dispatch = useDispatch();
     const handleClickCart = () => {
-        Dispatch(addProduct({ name, imgProduct, Price, Description }));
+        Dispatch(addProduct({ name, url, price, description }));
     }
 
     return (

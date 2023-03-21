@@ -6,13 +6,13 @@ import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { Autocomplete, Slide, TextField } from "@mui/material";
+import { Autocomplete, Button, TextField } from "@mui/material";
 import { useSelector } from "react-redux";
-import { forwardRef, useState } from "react";
-import DialogCart from "../dialogCart";
-// import GetProductDb from "../../hooks/GetProductDb";
-// import LoadProductsDbToStore from "../../hooks/LoadProductsDbToStore"; 
-
+import { useState } from "react";
+import Modal from "../modalCart";
+import CloseIcon from '@mui/icons-material/Close';
+import { orange } from "@mui/material/colors";
+import CardProductCart from "../CardProductCart";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -22,9 +22,13 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     padding: '0 4px',
   },
 }));
-const Transition = forwardRef(function Transition(props, ref) {
-  return <Slide direction="left" ref={ref} {...props} />;
-});
+const ColorButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.getContrastText(orange[500]),
+  backgroundColor: orange[500],
+  '&:hover': {
+    backgroundColor: orange[700],
+  },
+}));
 
 
 const Navbar = () => {
@@ -32,12 +36,8 @@ const Navbar = () => {
   const products = useSelector(store => store.products)
   const [open, setOpen] = useState(false);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
+  const handleClick = () => {
+    setOpen(!open);
   };
 
   return (
@@ -66,18 +66,48 @@ const Navbar = () => {
             <p>Categories</p>
           </div>
           <div className={styles.Cart}>
-            <IconButton aria-label="cart" onClick={handleClickOpen}>
+            <IconButton aria-label="cart" onClick={handleClick}>
               <StyledBadge badgeContent={cart.length} color="secondary" >
                 <ShoppingCartIcon />
               </StyledBadge>
             </IconButton>
-              <DialogCart props={{Transition, handleClose, open}}/>
           </div>
           <div className={styles.Account}>
             <AccountCircleIcon color="secondary" fontSize="large" />
           </div>
         </div>
       </div>
+      {open && (
+        <Modal>
+          <div className={styles.CardCart}>
+            <div className={styles.ContentCardCart}>
+              <div className={styles.TittleCartAndCross}>
+                <div className={styles.TittleCart}>
+                  Carrito de compras
+                </div>
+                <div className={styles.Cross} onClick={handleClick}>
+                  <CloseIcon />
+                </div>
+              </div>
+              <div className={styles.ProducsCart}>
+                {
+                  cart && cart.map((product, key) => {
+                    return <CardProductCart props={product} key={key}/>
+                  })
+                }
+              </div>
+              <div className={styles.Prices}>
+                <p className={styles.PricesTittle}>Total:</p>
+                <p className={styles.PricesNumber}>18.000</p>
+              </div>
+              <div className={styles.ConfirmCart}>
+                <ColorButton variant="contained" fullWidth>Iniciar Compra</ColorButton>
+              </div>
+            </div>
+          </div>
+        </Modal>
+      )}
+
     </div>
   );
 };

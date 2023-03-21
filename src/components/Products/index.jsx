@@ -15,7 +15,6 @@ function ProductsAndFilters() {
                 resolve(fetchData())
             })
             dataFromFirebase.then(resolve => resolve.forEach(element => {
-                console.log("Entro a la funcion");
                 Dispatch(addProduct(element))
             }))
         }

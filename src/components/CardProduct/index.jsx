@@ -13,6 +13,7 @@ function CardProduct({ props : { name, url, price, description }}) {
         resolve(getImgUrl(url));
     })
     urlPromiss.then(url => setImg(url))
+
     async function ImgPhoto(src){
         let urlImg = await getImgUrl(src)
         
@@ -21,9 +22,6 @@ function CardProduct({ props : { name, url, price, description }}) {
     }
 
     const formatprice = "$" + Intl.NumberFormat('en-DE').format(price);
-    // const urlProduct = name
-    //     .split(" ")
-    //     .reduce((prev, now) => prev + now);
 
     const handleClickToProduct = () => {
         navigate(`/products/${url}`)
