@@ -80,6 +80,7 @@
     margin-right: 8%;
 }
 .ProducsCart{
+    overflow: auto;
     border: 2px black solid;
     height: 70%;
 }

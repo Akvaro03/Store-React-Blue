@@ -1,0 +1,18 @@
+.bodyCircle{
+    height: 100vh;
+    overflow: hidden;
+}
+
+.ContentCircle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transform: scale(2.4);
+    overflow: hidden;
+    /* display: 'flex';
+    justify-content: 'center';
+    align-items: 'center';
+    height: '100vh'; */
+}
+
