@@ -57,14 +57,13 @@
 }
 .DeleteProduct{
     margin: 3% 4% 0 0;
+    color: #fff;
+    transition: all ease-in-out .3s;
 }
-.MinusS {
-    border: 1px solid black;
-    flex: 0 0 20px;
-    height: 20px;
-    border-radius: 50%;
+.DeleteProduct:hover{
+    color: gray;
+    transition: all ease-in-out .3s;
 }
-
 ::-webkit-scrollbar {
     width: 8px;
     /* width of the entire scrollbar */

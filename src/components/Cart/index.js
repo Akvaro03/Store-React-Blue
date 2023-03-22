@@ -24,7 +24,7 @@ function CartModal({ handleClick }) {
 
     useEffect(() => {
         cart[0] && cart.forEach(element => {
-            setTotalPrice((prev) => prev + element.price)
+            setTotalPrice((prev) => prev + element.price * element.count)
         });
     }, [cart])
 

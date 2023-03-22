@@ -3,7 +3,7 @@ import getImgUrl from '../../hooks/getImgUrl';
 import Style from './CardProductCart.module.css'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
-function CardProductCart({ props: { name, url, price, description } }) {
+function CardProductCart({ props: { name, url, price, description, count } }) {
     const [img, setImg] = useState()
     const urlPromiss = new Promise((resolve, reject) => {
         resolve(getImgUrl(url));
@@ -20,7 +20,7 @@ function CardProductCart({ props: { name, url, price, description } }) {
                     <div className={Style.NameProduct}>{name}</div>
                     <div className={Style.PriceProductAndCount}>
                         <div className={Style.Price}>{formatprice}</div>
-                        <div className={Style.Count}>5</div>
+                        <div className={Style.Count}>{count}</div>
                     </div>
             </div>
             <div className={Style.DeleteProduct}>

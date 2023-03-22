@@ -28,6 +28,12 @@
 }
 .Cross{
     margin-right: 8%;
+    transition: all ease-in-out .3s;
+    cursor: pointer;
+}
+.Cross:hover{
+    color: gray;
+    transition: all ease-in-out .3s;
 }
 .ProducsCart{
     overflow: auto;
