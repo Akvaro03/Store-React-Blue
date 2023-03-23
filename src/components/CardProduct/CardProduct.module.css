@@ -1,8 +1,9 @@
-.CardProduct{
+.CardProduct {
     position: relative;
     /* overflow: hidden; */
 }
-.ContentImg{
+
+.ContentImg {
     background-color: #E0B5FA;
     margin: 5%;
     box-shadow: rgb(17 12 46 / 15%) 0px 48px 100px 0px;
@@ -11,11 +12,13 @@
     position: relative;
     overflow: hidden;
 }
-.ContentImg:hover .ContentIcon{
+
+.ContentImg:hover .ContentIcon {
     transform: translateY(0%);
     transition: all 0.3s ease-out;
 }
-.ContentIcon{
+
+.ContentIcon {
     position: absolute;
     bottom: 7%;
     left: 46%;
@@ -25,31 +28,40 @@
     border-radius: 50%;
     transition: all 0.3s ease-out;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
-.ImgCard{
+
+.ImgCard {
     width: 100%;
     height: auto;
-
     filter: drop-shadow(10px 10px 9px #31313173);
 }
-.DescriptionProduct{
+
+.DescriptionProduct {
     display: grid;
     gap: 0.7em;
     text-align: center;
 }
-.DescriptionTittle{
+
+.DescriptionTittle {
     color: rgb(27, 27, 27) !important;
     font-size: 25px;
     font-weight: 300;
 }
-.DescriptionTittle:hover{
+
+.DescriptionTittle:hover {
     color: rgb(94, 93, 93) !important;
 }
-.DescriptionPrice{
+
+.DescriptionPrice {
     font-weight: 600;
     color: #f39c12 !important;
 }
-.IconCart{
+
+.IconCart {
     color: #f39c12 !important;
 
 }

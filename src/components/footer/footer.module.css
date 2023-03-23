@@ -1,0 +1,19 @@
+.ContentFooter{
+    background-color: #B8EBA9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    gap: 1.4rem;
+    padding-bottom: 4%;
+    color: rgb(27, 27, 27) !important;
+}
+
+.ContentFooter a{
+    color: rgb(27, 27, 27) !important;
+}
+
+.ContentIconFooter{
+    display: flex;
+    align-items: center;
+}

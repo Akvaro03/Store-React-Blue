@@ -23,6 +23,7 @@ function CartModal({ handleClick }) {
     const formatprice = "$" + Intl.NumberFormat('en-DE').format(totalPrice);
 
     useEffect(() => {
+        setTotalPrice(0)
         cart[0] && cart.forEach(element => {
             setTotalPrice((prev) => prev + element.price * element.count)
         });

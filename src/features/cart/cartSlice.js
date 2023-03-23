@@ -5,22 +5,31 @@ const initialState = [];
 const storeSlice = createSlice({
     name: "cart",
     initialState,
-    reducers:{
-        addProduct: (state, {payload}) => {
+    reducers: {
+        addProduct: (state, { payload }) => {
             let newState = [...state];
             let found = state[0] ? newState.findIndex(product => payload.name === product.name) : "none"
-            if(found >= 0){
+            if (found >= 0) {
                 // let count = {...newState[found].count}
-                newState[found] = {...newState[found], count:newState[found].count + 1}
-            } else{
+                newState[found] = { ...newState[found], count: newState[found].count + 1 }
+            } else {
                 newState.push(payload);
-            }         
-
-            console.log(newState)
+            }
             return newState;
         },
-        deleteProduct: (state, action) => {
+        deleteProduct: (state, { payload }) => {
+            console.log("first")
+            let newState = [...state];
+            let productFound = state[0] && newState.findIndex(product => payload.name === product.name)
+            if (productFound >= 0) {
+                newState[productFound].count > 1
+                    ?
+                    newState[productFound] = {...newState[productFound], count: newState[productFound].count - 1}
+                    :
+                    newState.splice(productFound, 1)
+            }
 
+            return newState;
         }
     }
 });

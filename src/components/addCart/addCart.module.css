@@ -1,8 +1,57 @@
-.ContentImg:hover .ContentIcon{
+.ContentImg:hover .ContentIcon {
     transform: translateY(0%);
     transition: all 0.3s ease-out;
 }
-.IconCart{
-    color: #f39c12 !important;
 
+.IconCart {
+    color: #f39c12 !important;
+    animation: inAnimation 300ms ease-in;
+    width: 100%;
+    padding: 4px;
+    transform: scale(1.1);
+}
+
+.ContentIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.IconLoading {
+    color: #f39c12 !important;
+    padding: 2px;
+    padding: 4px;
+    transform: scale(1.1);
+}
+
+.IconSucces {
+    color: green !important;
+    opacity: 1;
+    transition: ease-in-out 4s;
+    animation: inAnimation 300ms ease-out;
+    padding: 4px;
+    transform: scale(1.1);
+}
+
+@keyframes inAnimation {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes outAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
 }

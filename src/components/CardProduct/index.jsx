@@ -14,17 +14,19 @@ function CardProduct({ props : { name, url, price, description }}) {
     })
     urlPromiss.then(url => setImg(url))
 
-    async function ImgPhoto(src){
-        let urlImg = await getImgUrl(src)
+    // async function ImgPhoto(src){
+    //     let urlImg = await getImgUrl(src)
         
-        console.log(urlImg)
-        return(<h1>a</h1>)
-    }
+    //     console.log(urlImg)
+    //     return(<h1>a</h1>)
+    // }
 
     const formatprice = "$" + Intl.NumberFormat('en-DE').format(price);
 
     const handleClickToProduct = () => {
-        navigate(`/products/${url}`)
+        let nameUrl = name.replace(/\s/g, '') 
+        console.log(nameUrl)
+        navigate(`/${nameUrl}`)
     }
     // console.log(urlImg)
     return (
