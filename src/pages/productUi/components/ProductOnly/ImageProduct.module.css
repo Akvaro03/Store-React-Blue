@@ -1,0 +1,9 @@
+.imgProduct {
+    width: 80%; 
+    filter: drop-shadow(10px 10px 9px #31313173);
+}
+.ContentImg{
+    /* background-color: #E0B5FA; */
+    display: flex;
+    justify-content: center;
+}

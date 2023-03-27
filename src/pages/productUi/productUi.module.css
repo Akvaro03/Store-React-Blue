@@ -1,0 +1,10 @@
+.ProductContent {
+    background: #B8EBA9;
+    padding: 3% 6%;
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    font: 400 24px/30px Montserrat, sans-serif !important;
+    font-weight: 400;
+}

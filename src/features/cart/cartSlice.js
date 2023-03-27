@@ -10,8 +10,7 @@ const storeSlice = createSlice({
             let newState = [...state];
             let found = state[0] ? newState.findIndex(product => payload.name === product.name) : "none"
             if (found >= 0) {
-                // let count = {...newState[found].count}
-                newState[found] = { ...newState[found], count: newState[found].count + 1 }
+                newState[found] = { ...newState[found], count: Number(newState[found].count) + Number(payload.count) }
             } else {
                 newState.push(payload);
             }

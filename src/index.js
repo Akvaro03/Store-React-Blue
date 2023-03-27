@@ -8,9 +8,9 @@ import ProgressCircle from './components/progressCircle';
 // import MiniNavbar from './components/miniNavbar';
 // import Navbar from './components/navbar/Navbar';
 import { store } from './store/store'
-const ProductOnly = lazy(() => import('./pages/productUi'));
+const ProductUi = lazy(() => import('./pages/productUi'));
 const Home = lazy(() => import('./pages/home/home'));
-const ProductsUi = lazy(() => import('./pages/AllproductsUi'));
+const AllProductsUi = lazy(() => import('./pages/AllproductsUi'));
 
 
 const router = createBrowserRouter([
@@ -20,11 +20,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/products",
-    element: <ProductsUi />,
+    element: <AllProductsUi />,
   },
   {
     path: "/:id",
-    element: <ProductOnly />,
+    element: <ProductUi />,
   },
 ]);
 

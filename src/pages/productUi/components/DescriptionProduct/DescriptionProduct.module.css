@@ -1,0 +1,40 @@
+.ContentDescription{
+    padding-left: 10%;
+    width: 100%;
+    /* border-left: 1px solid rgba(109, 109, 109, 0.767); */
+}
+
+.NameProduct {
+    margin: 7% 0;    
+    width: 100%;
+    letter-spacing: 4px;
+    font-size: 2.4rem;
+    font-family: "Montserrat";
+}
+
+hr {
+    border-bottom: 1px rgb(165 165 165 / 25%) solid;
+    width: 80%;
+}
+
+.PriceProduct{
+    margin: 5% 0;
+}
+
+.TittlePrice{
+    font-weight: 500;
+    font-family: "Montserrat";
+    font-size: 14px;
+}
+.ContentPrice{
+    font-weight: 500;
+    font-family: "Montserrat";
+    font-size: 25px;
+    
+}
+
+.AddCart{
+    margin: 20% 0 0 0;
+    display: flex;
+    gap: 1rem;
+}

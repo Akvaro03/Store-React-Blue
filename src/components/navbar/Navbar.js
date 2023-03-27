@@ -7,10 +7,12 @@ import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Autocomplete, TextField } from "@mui/material";
-import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import Modal from "../modalCart";
 import CartModal from "../Cart";
+import { addProduct } from "../../features/products/productsSlice";
+import fetchData from "../../hooks/fetchData";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -30,6 +32,23 @@ const Navbar = () => {
   const handleClick = () => {
     setOpen(!open);
   };
+  const Dispatch = useDispatch();
+
+
+  useEffect(() => {
+      const saveData = () => {
+          const dataFromFirebase = new Promise((resolve, reject) => {
+              resolve(fetchData())
+          })
+          dataFromFirebase.then(resolve => resolve.forEach(element => {
+              Dispatch(addProduct(element))
+          }))
+      }
+      if (products.length === 0) {
+          saveData()
+      }
+  }, [products,Dispatch])
+
 
   return (
     <div className={styles.navbar}>
