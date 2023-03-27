@@ -3,12 +3,20 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addProduct } from '../../../../features/cart/cartSlice';
 import Style from './DescriptionProduct.module.css'
+import Modal from '../../../../components/modalCart'
+import Alert from '@mui/material/Alert';
 
 function DescriptionProduct({ product }) {
     const [count, setCount] = useState(1)
+    const [error, setError] = useState(false)
+
     const Dispatch = useDispatch();
     const handleClick = () => {
-        Dispatch(addProduct({ ...product, count }));
+        if (count > 0) {
+            Dispatch(addProduct({ ...product, count }));
+        } else {
+            setError(true)
+        }
     }
     const handleChangeCount = ({ target: { value } }) => {
         setCount(value)
@@ -38,6 +46,11 @@ function DescriptionProduct({ product }) {
                 </FormControl>
                 <Button onClick={handleClick} fullWidth variant="contained">Añadir al Carrito</Button>
             </div>
+            {error && (
+                <Modal type={"Alert"}>
+                    <Alert severity="warning" onClose={() => {setError(false)}}>Error en la cantidad de unidades</Alert>
+                </Modal>
+            )}
         </div>
     );
 }

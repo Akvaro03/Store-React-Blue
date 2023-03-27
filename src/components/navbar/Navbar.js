@@ -1,18 +1,17 @@
-import { Link } from "react-router-dom";
-
-import styles from "./Navbar.module.css";
-import Badge from '@mui/material/Badge';
-import { styled } from '@mui/material/styles';
-import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { Autocomplete, TextField } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import IconButton from '@mui/material/IconButton';
+import { styled } from '@mui/material/styles';
+import Badge from '@mui/material/Badge';
+import styles from "./Navbar.module.css";
 import Modal from "../modalCart";
 import CartModal from "../Cart";
-import { addProduct } from "../../features/products/productsSlice";
 import fetchData from "../../hooks/fetchData";
+import { Link } from "react-router-dom";
+import { Autocomplete, TextField } from "@mui/material";
+import { addProduct } from "../../features/products/productsSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -36,18 +35,18 @@ const Navbar = () => {
 
 
   useEffect(() => {
-      const saveData = () => {
-          const dataFromFirebase = new Promise((resolve, reject) => {
-              resolve(fetchData())
-          })
-          dataFromFirebase.then(resolve => resolve.forEach(element => {
-              Dispatch(addProduct(element))
-          }))
-      }
-      if (products.length === 0) {
-          saveData()
-      }
-  }, [products,Dispatch])
+    const saveData = () => {
+      const dataFromFirebase = new Promise((resolve, reject) => {
+        resolve(fetchData())
+      })
+      dataFromFirebase.then(resolve => resolve.forEach(element => {
+        Dispatch(addProduct(element))
+      }))
+    }
+    if (products.length === 0) {
+      saveData()
+    }
+  }, [products, Dispatch])
 
 
   return (
@@ -88,34 +87,8 @@ const Navbar = () => {
         </div>
       </div>
       {open && (
-        <Modal>
-          {/* <div className={styles.CardCart}>
-            <div className={styles.ContentCardCart}>
-              <div className={styles.TittleCartAndCross}>
-                <div className={styles.TittleCart}>
-                  Carrito de compras
-                </div>
-                <div className={styles.Cross} onClick={handleClick}>
-                  <CloseIcon />
-                </div>
-              </div>
-              <div className={styles.ProducsCart}>
-                {
-                  cart && cart.map((product, key) => {
-                    return <CardProductCart props={product} key={key}/>
-                  })
-                }
-              </div>
-              <div className={styles.Prices}>
-                <p className={styles.PricesTittle}>Total:</p>
-                <p className={styles.PricesNumber}>18.000</p>
-              </div>
-              <div className={styles.ConfirmCart}>
-                <ColorButton variant="contained" fullWidth>Iniciar Compra</ColorButton>
-              </div>
-            </div>
-          </div> */}
-          <CartModal handleClick={handleClick}/>
+        <Modal type={"Cart"}>
+          <CartModal handleClick={handleClick} />
         </Modal>
       )}
 
