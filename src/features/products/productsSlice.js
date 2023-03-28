@@ -1,6 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import imgBackpack from '../../img/productExample.png'
-import imgDoll from '../../img/productDoll.png'
 
 // const initialState = [
 //     {

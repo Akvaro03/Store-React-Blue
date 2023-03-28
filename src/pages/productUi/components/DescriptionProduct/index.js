@@ -8,20 +8,22 @@ import Alert from '@mui/material/Alert';
 
 function DescriptionProduct({ product }) {
     const [count, setCount] = useState(1)
-    const [error, setError] = useState(false)
-
+    const [state, setState] = useState("")
+    const [textState, setTextState] = useState("")
     const Dispatch = useDispatch();
     const handleClick = () => {
         if (count > 0) {
             Dispatch(addProduct({ ...product, count }));
+            setState("success")
+            setTextState("Se agrego al carrito")
         } else {
-            setError(true)
+            setState("warning")
+            setTextState("No se agrego al carrito")
         }
     }
     const handleChangeCount = ({ target: { value } }) => {
         setCount(value)
     }
-
     const formatprice = "$" + Intl.NumberFormat('en-DE').format(product.price);
 
     return (
@@ -46,13 +48,21 @@ function DescriptionProduct({ product }) {
                 </FormControl>
                 <Button onClick={handleClick} fullWidth variant="contained">Añadir al Carrito</Button>
             </div>
-            {error && (
-                <Modal type={"Alert"}>
-                    <Alert severity="warning" onClose={() => {setError(false)}}>Error en la cantidad de unidades</Alert>
-                </Modal>
+            {state === "warning" && (
+                <HandleAlert type={"warning"} text={textState} setError={setState} />
+            )}
+            {state === "success" && (
+                <HandleAlert type={"success"} text={textState} setError={setState} />
             )}
         </div>
     );
+}
+function HandleAlert({ type, text, setError }) {
+    return (
+        <Modal type={"Alert"}>
+            <Alert severity={type} onClose={() => { setError(false) }}>{text}</Alert>
+        </Modal>
+    )
 }
 
 export default DescriptionProduct;

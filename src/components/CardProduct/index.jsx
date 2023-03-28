@@ -14,12 +14,6 @@ function CardProduct({ props : { name, url, price, description }}) {
     })
     urlPromiss.then(url => setImg(url))
 
-    // async function ImgPhoto(src){
-    //     let urlImg = await getImgUrl(src)
-        
-    //     console.log(urlImg)
-    //     return(<h1>a</h1>)
-    // }
 
     const formatprice = "$" + Intl.NumberFormat('en-DE').format(price);
 

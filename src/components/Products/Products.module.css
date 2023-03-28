@@ -1,7 +1,8 @@
 .HeaderAndFilters{
-    height: 25vh;
+    height: 10vh;
+    padding-top: 2%;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: 2fr 1fr 2fr;
 }
 
 .HeaderTittle{
@@ -16,14 +17,35 @@
     font-weight: 700;
 }
 
-.Filters{
+.FiltersContent{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    margin-left: 10%;
+    justify-content: flex-end;
+}
+
+.Filters{
+    display: flex;
+    width: 500px;
+    /* align-items: center;
+    justify-content: space-evenly; */
 }
 
 .ContentProducts{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%,17rem), 1fr));
+}
+
+.Filter{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    gap: 5%;
+}
+.Filter .TypeOrder{
+    font-size: 13px;
+    color: #343636;
+}
+
+.Filter .Order{
+    font-family: 'Montserrat', sans-serif;
 }

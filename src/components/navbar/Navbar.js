@@ -8,7 +8,7 @@ import Modal from "../modalCart";
 import CartModal from "../Cart";
 import fetchData from "../../hooks/fetchData";
 import { Link } from "react-router-dom";
-import { Autocomplete, TextField } from "@mui/material";
+import { Autocomplete, Button, Menu, MenuItem, TextField } from "@mui/material";
 import { addProduct } from "../../features/products/productsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
@@ -31,6 +31,16 @@ const Navbar = () => {
   const handleClick = () => {
     setOpen(!open);
   };
+  const [anchorEl, setAnchorEl] = useState(null);
+  const stateCategories = Boolean(anchorEl);
+  const handleClickCategories = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   const Dispatch = useDispatch();
 
 
@@ -72,7 +82,29 @@ const Navbar = () => {
             </Link>
           </div>
           <div className={styles.Categories}>
-            <p>Categories</p>
+            <Button
+              id="basic-button"
+              aria-controls={stateCategories ? 'basic-menu' : undefined}
+              aria-haspopup="true"
+              aria-expanded={stateCategories ? 'true' : undefined}
+              onClick={handleClickCategories}
+            >
+              Categorias
+            </Button>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={stateCategories}
+              onClose={handleClose}
+              MenuListProps={{
+                'aria-labelledby': 'basic-button',
+              }}
+            >
+              <MenuItem onClick={handleClose}>Anal</MenuItem>
+              <MenuItem onClick={handleClose}>Plug</MenuItem>
+              <MenuItem onClick={handleClose}>Dildos</MenuItem>
+              <MenuItem onClick={handleClose}>Esposas</MenuItem>
+            </Menu>
           </div>
           <div className={styles.Cart}>
             <IconButton aria-label="cart" onClick={handleClick}>

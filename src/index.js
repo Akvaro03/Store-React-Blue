@@ -28,12 +28,20 @@ const router = createBrowserRouter([
   },
 ]);
 
+function TryC(){
+  try {
+    return <RouterProvider router={router} fallbackElement={<p>asdas</p>} />
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Suspense fallback={<ProgressCircle />}>
       <Provider store={store}>
-        <RouterProvider router={router} fallbackElement={<p>asdas</p>} />
+        <TryC />
       </Provider>
       <Footer />
     </Suspense>
